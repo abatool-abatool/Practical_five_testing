@@ -4,6 +4,7 @@ var app = express()
 var cors = require('cors')
 let dbConnect = require("./dbConnect");
 let projectRoutes = require("./routes/projectRoutes");
+let userRoute = require("./routes/userRoutes");
 //let projectCollection; 
 
 app.use(express.static(__dirname+'/public'))
@@ -12,6 +13,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors())
 
 app.use('/api/projects',projectRoutes)
+
+app.use('/api/user',userRoute)
 
 //const MongoClient = require('mongodb').MongoClient
 
